@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD7AFA25-C958-47D6-9702-7E736D7263DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VenterModuleLabApi</RootNamespace>
+    <AssemblyName>VenterModule.LabApi</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\Dependencies\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="AdvancedMERTools">
+      <HintPath>..\..\..\.config\SCP Secret Laboratory\LabAPI\plugins\global\AdvancedMERTools.dll</HintPath>
+    </Reference>
+    <Reference Include="AMERTAudioModule">
+      <HintPath>..\..\..\.config\SCP Secret Laboratory\LabAPI\dependencies\global\AMERTAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\Dependencies\Assembly-CSharp-Publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\Dependencies\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="AudioPlayerApi">
+      <HintPath>..\..\..\.config\SCP Secret Laboratory\LabAPI\dependencies\global\AudioPlayerApi.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandSystem.Core">
+      <HintPath>..\..\Dependencies\CommandSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="LabApi">
+      <HintPath>..\..\Dependencies\LabApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror">
+      <HintPath>..\..\Dependencies\Mirror.dll</HintPath>
+    </Reference>
+    <Reference Include="NorthwoodLib">
+      <HintPath>..\..\Dependencies\NorthwoodLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Pooling">
+      <HintPath>..\..\Dependencies\Pooling.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectMER">
+      <HintPath>..\..\..\.config\SCP Secret Laboratory\LabAPI\plugins\global\ProjectMER.dll</HintPath>
+    </Reference>
+    <Reference Include="RueI">
+      <HintPath>..\..\Dependencies\RueI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\Dependencies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\Dependencies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\Dependencies\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="VenterModule.CustomItemsApi">
+      <HintPath>..\VenterModule.CustomItemsApi\bin\Release\VenterModule.CustomItemsApi.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>..\..\Dependencies\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\Extensions\CustomKeycardExtensions.cs" />
+    <Compile Include="API\Extensions\PlayerRoleplayExtensions.cs" />
+    <Compile Include="API\Extensions\ServerSpecificExtensions.cs" />
+    <Compile Include="API\Features\Behaviours\BleedingController.cs" />
+    <Compile Include="API\Features\Behaviours\ChaosInsurgencyKeycardController.cs" />
+    <Compile Include="API\Features\Behaviours\DeathPretendController.cs" />
+    <Compile Include="API\Features\Behaviours\GeneralController.cs" />
+    <Compile Include="API\Features\Behaviours\HurtConsequencesController.cs" />
+    <Compile Include="API\Features\Behaviours\MetalDetectorController.cs" />
+    <Compile Include="API\Features\Behaviours\PushTracker.cs" />
+    <Compile Include="API\Features\Behaviours\RagdollAdditionalInformation.cs" />
+    <Compile Include="API\Features\Behaviours\SpeechTracker.cs" />
+    <Compile Include="API\Features\DoorCustomPermissions.cs" />
+    <Compile Include="API\Features\Scp939Features.cs" />
+    <Compile Include="API\Features\ServerSpecific\GenerateSS.cs" />
+    <Compile Include="API\Features\ServerSpecific\Keybindings\ChaosInsurgencySpecific.cs" />
+    <Compile Include="API\Features\ServerSpecific\Keybindings\DeathPretendSpecific.cs" />
+    <Compile Include="API\Features\ServerSpecific\Keybindings\GiveItemToPlayer.cs" />
+    <Compile Include="API\Features\ServerSpecific\Keybindings\PushPlayerSpecific.cs" />
+    <Compile Include="API\Features\ServerSpecific\Keybindings\Scp049TakeKeycard.cs" />
+    <Compile Include="API\Features\ServerSpecific\Keybindings\Scp106Dimension.cs" />
+    <Compile Include="Commands\Admin\AdminMessageCommand.cs" />
+    <Compile Include="Commands\Admin\ArrestCommand.cs" />
+    <Compile Include="Commands\Admin\BreachCommand.cs" />
+    <Compile Include="Commands\Admin\CassieSystemCommand.cs" />
+    <Compile Include="Commands\Admin\FacilityColorCommand.cs" />
+    <Compile Include="Commands\Admin\ClassDLockCommand.cs" />
+    <Compile Include="Commands\Admin\PlayerStatsCommand.cs" />
+    <Compile Include="Commands\Admin\PlayWaveAnimationCommand.cs" />
+    <Compile Include="Commands\Admin\SetnickCommand.cs" />
+    <Compile Include="Commands\Admin\TerminationCommand.cs" />
+    <Compile Include="Commands\Admin\ToggleAutoRound.cs" />
+    <Compile Include="Commands\Admin\ToggleTeslaCommand.cs" />
+    <Compile Include="Commands\Admin\WorkdayCommand.cs" />
+    <Compile Include="Commands\Client\CallCommand.cs" />
+    <Compile Include="Commands\Client\CuffCommand.cs" />
+    <Compile Include="Commands\Client\EmergencyButtonCommand.cs" />
+    <Compile Include="Commands\Client\LookupCommand.cs" />
+    <Compile Include="Commands\Client\MessageCommand.cs" />
+    <Compile Include="Commands\Client\SuicideCommand.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="EventHandlers.cs" />
+    <Compile Include="Events\General\CustomCassieSystemHandler.cs" />
+    <Compile Include="Events\General\CustomGeneratorHandler.cs" />
+    <Compile Include="Events\General\GrenadesHandler.cs" />
+    <Compile Include="Events\PlayerEvents\CameraShakerHandler.cs" />
+    <Compile Include="Events\PlayerEvents\CustomComponentsHandler.cs" />
+    <Compile Include="Events\PlayerEvents\CustomHitmarkerHandler.cs" />
+    <Compile Include="Events\PlayerEvents\CustomScp914PlayerProcessor.cs" />
+    <Compile Include="Events\PlayerEvents\CustomTeslaHandler.cs" />
+    <Compile Include="Events\PlayerEvents\CustomWindowDamageHandler.cs" />
+    <Compile Include="Events\PlayerEvents\DeathPretendHandler.cs" />
+    <Compile Include="Events\PlayerEvents\DoorsInteractionHandler.cs" />
+    <Compile Include="Events\PlayerEvents\FlashlightAttachmentHandler.cs" />
+    <Compile Include="Events\PlayerEvents\Health\HurtHandler.cs" />
+    <Compile Include="Events\PlayerEvents\Health\MedicineHandler.cs" />
+    <Compile Include="Events\PlayerEvents\OtherPlayerHandler.cs" />
+    <Compile Include="Events\PlayerEvents\PlayerInfoHandler.cs" />
+    <Compile Include="Events\PlayerEvents\RadioHandler.cs" />
+    <Compile Include="Events\PlayerEvents\Scp330DisableEffects.cs" />
+    <Compile Include="Events\PlayerEvents\ScpHandler.cs" />
+    <Compile Include="Events\PlayerEvents\VoiceChattingHandler.cs" />
+    <Compile Include="Events\ServerEvents\CustomCassieAnnouncingHandler.cs" />
+    <Compile Include="Events\ServerEvents\CustomWaveRespawningHandler.cs" />
+    <Compile Include="Events\ServerEvents\RoundHandler.cs" />
+    <Compile Include="Patches\MedkitHealPatch.cs" />
+    <Compile Include="Patches\PainkillersPatch.cs" />
+    <Compile Include="Patches\Scp079RecontainerPatch.cs" />
+    <Compile Include="Patches\Scp1509Patches.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VenterModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomItems\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

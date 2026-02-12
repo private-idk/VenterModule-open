@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{819253F9-BF0A-474B-83E1-D88F0BF8E74F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VenterModuleExiled</RootNamespace>
+    <AssemblyName>VenterModule.Exiled</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\Dependencies\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\Dependencies\Assembly-CSharp-Publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\Dependencies\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandSystem.Core">
+      <HintPath>..\..\Dependencies\CommandSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.API">
+      <HintPath>..\..\Dependencies\Exiled.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CreditTags">
+      <HintPath>..\..\Dependencies\Exiled.CreditTags.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CustomItems">
+      <HintPath>..\..\Dependencies\Exiled.CustomItems.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.CustomRoles">
+      <HintPath>..\..\Dependencies\Exiled.CustomRoles.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Events">
+      <HintPath>..\..\Dependencies\Exiled.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Loader">
+      <HintPath>..\..\Dependencies\Exiled.Loader.dll</HintPath>
+    </Reference>
+    <Reference Include="Exiled.Permissions">
+      <HintPath>..\..\Dependencies\Exiled.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="LabApi">
+      <HintPath>..\..\Dependencies\LabApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Mirror">
+      <HintPath>..\..\Dependencies\Mirror.dll</HintPath>
+    </Reference>
+    <Reference Include="NorthwoodLib">
+      <HintPath>..\..\Dependencies\NorthwoodLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Pooling">
+      <HintPath>..\..\Dependencies\Pooling.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectMER">
+      <HintPath>..\..\..\.config\SCP Secret Laboratory\LabAPI\plugins\global\ProjectMER.dll</HintPath>
+    </Reference>
+    <Reference Include="RueI">
+      <HintPath>..\..\Dependencies\RueI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\Dependencies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\Dependencies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\Dependencies\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>..\..\Dependencies\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\AdminGunController.cs" />
+    <Compile Include="API\Extensions\CustomItemsExtensions.cs" />
+    <Compile Include="API\Extensions\WorkdayExtensions.cs" />
+    <Compile Include="API\ServerSpecific\AdminGunSpecific.cs" />
+    <Compile Include="API\ServerSpecific\GenerateSS.cs" />
+    <Compile Include="API\ServerSpecific\GunStockSpecific.cs" />
+    <Compile Include="API\Subroles\AllSubroles\AdministrativeService.cs" />
+    <Compile Include="API\Subroles\AllSubroles\ChaosInsurgencyService.cs" />
+    <Compile Include="API\Subroles\AllSubroles\ClassDService.cs" />
+    <Compile Include="API\Subroles\AllSubroles\CustomTaskForce.cs" />
+    <Compile Include="API\Subroles\AllSubroles\EngineerService.cs" />
+    <Compile Include="API\Subroles\AllSubroles\MedicalService.cs" />
+    <Compile Include="API\Subroles\AllSubroles\PersonnelService.cs" />
+    <Compile Include="API\Subroles\AllSubroles\ScientistService.cs" />
+    <Compile Include="API\Subroles\AllSubroles\SecurityCurfewService.cs" />
+    <Compile Include="API\Subroles\AllSubroles\SecuritySpecialService.cs" />
+    <Compile Include="API\Subroles\AllSubroles\ServiceBase.cs" />
+    <Compile Include="API\Subroles\Enums\NicknameTypeEnum.cs" />
+    <Compile Include="API\Subroles\Enums\ServiceEnum.cs" />
+    <Compile Include="API\Subroles\KeycardManager.cs" />
+    <Compile Include="API\Subroles\SubrolesManager.cs" />
+    <Compile Include="Commands\Admin\CustomTaskForceCommand.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="CustomItems\AdminGun.cs" />
+    <Compile Include="CustomItems\Taser.cs" />
+    <Compile Include="EventHandlers.cs" />
+    <Compile Include="Events\PlayerEvents\ArmorHandler.cs" />
+    <Compile Include="Events\PlayerEvents\ComponentsHandler.cs" />
+    <Compile Include="Events\PlayerEvents\CustomPlayerDisplayHandler.cs" />
+    <Compile Include="Events\PlayerEvents\SubrolesHandler.cs" />
+    <Compile Include="Events\PlayerEvents\TaserPickupmodel.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\Client\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
